@@ -1,38 +1,214 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Mukta&family=Slabo+27px&display=swap');
+
+:root{
+  --font-sidebar-title : 'Ephesis', cursive;
+  --linear-gradient:  linear-gradient(to bottom right, #33ccff 0%,#ff99cc 100%);
+}
+
+
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(6, 41, 116); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #153a88; 
+}
+
+.main-container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to right,  #161248 0%,#1a1552 100%);;
+  color: White;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  grid-gap: 2rem;
+  place-items: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.sidebar-container{
+  height: 98%;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content auto;
+  grid-gap: 3rem;
+  place-items: center;
+  background-color: #16144b;
+  overflow: hidden;
+}
+
+.sidebar-header{
+  width: 95%;
+  display: grid;
+  /* grid-template-columns: max-content auto; */
+  place-items: center;
+  grid-gap: 0.5rem;
+  font-family: var(--font-sidebar-title);
+  font-size: 26px;
+  font-weight: 600;
+  background-color: #1c1754;
+}
+
+.sidebar-logo{
+  height: 3rem;
+  width: 4rem;
+  place-self: center;
+}
+
+.sidebar-nav-menu{
+  place-self: start center;
+  height: 100%;
+  width: 95%;
+  padding: 0.5rem 1rem;
+  overflow-y: scroll;
+}
+
+.sidebar-nav-menu li{
+  list-style: none;
   text-align: center;
+  padding: 0.8rem 0;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidebar-nav-menu li:hover{
+  background-color: #3e065f73;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container{
+  height: 100%;
+  width: 100%;
+  background-color: #16144b;
+  border: 2px solid rgb(15, 25, 59);
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content auto;
+  grid-gap: 2rem;
+}
+/* .sidebar-title{
+
+} */
+
+.nav-container{
+  height: 2.5rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 3.5fr 1fr;
+  place-items: center;
+  grid-gap: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search-section {
+  height: 100%;
+}
+.search-section input{
+  height: 100%;
+  background-color: #1c1656;
+  border: none;
+  outline: none;
+  /* border-radius: 0.5rem; */
   color: white;
+  padding: 0 0.1rem;
+}
+.search-section button{
+  height: 100%;
+  width: 2rem;
+  background-color: #1c1656;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+.nav-li-container{
+  height: 100%;
+  width: 100%;
+  place-self: center;
+  padding: 0.3rem 0;
+}
+.li-container{
+  width: 6rem;
+  height: 100%;
+  list-style: none;
+  float: left;
+  text-align: center;
+  background: var(--linear-gradient);
 }
 
-.App-link {
-  color: #61dafb;
+.li-container li{
+  width: inherit;
+  background-color: #16144b;
+  padding: 0.3rem 0;
+}
+.li-container li:hover{
+  background-color: #4b359cde;
+}
+.active{
+  height: 90%;
+}
+.disable{
+  height: 100%;
+}
+.active-menu{
+  background-color: White;
+  color: red;
+}
+/* .nav-li-container li:active::after{
+  border-bottom: 4px solid red;
+} */
+
+.nav-btn{
+  place-self: center end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-btn button{
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(to bottom right, #33ccff 0%, #ff99cc 75%,#ff99cc 100%);
+  border: none;
+  outline: none;
+}
+
+.app-section{
+  display: grid;
+  grid-template-columns: repeat(5,auto);
+  overflow-y: scroll;
+  grid-gap: 0.5rem;
+}
+
+.app-data-container{
+  height: 10.3rem;
+  width: 10rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: max-content max-content;
+  grid-gap: 0.5rem;
+  overflow: hidden;
+}
+.app-data-container img{
+  height: 5rem;
+  width: 100%;
+ 
 }
