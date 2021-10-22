@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import AppContent from './components/AppContent';
 import SideBar from './components/SideBar';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 const KEY = "AIzaSyB3rwzz_kMR9xl1goMF3vvi3iY24RtZGy8"
 
@@ -10,7 +11,7 @@ const App = () => {
   const [youtubeData, setYoutubeData] = useState();
   const [selectedApp, setSelectedApp] = useState({
     Type: "",
-    TypeList: []
+    selectedVideo: null
   })
   const [term, setTerm] = useState("");
   const ApiData = async () => {
@@ -20,7 +21,7 @@ const App = () => {
         q: term,
         part: 'snippet',
         type: 'video',
-        maxResults: 5,
+        maxResults: 50,
         key: KEY
       }
     })
@@ -29,13 +30,15 @@ const App = () => {
     console.log(response);
   }
   useEffect(() => {
-    ApiData();
+    // ApiData();
   }, [term])
   return (
     <>
       <div className="main-container">
-        <SideBar selectedApp={selectedApp} setSelectedApp={setSelectedApp} term={term} setTerm={setTerm}/>
-        <AppContent selectedApp={selectedApp} setSelectedApp={setSelectedApp} term={term} setTerm={setTerm} youtubeData={youtubeData}/>
+        <Router>
+            <SideBar selectedApp={selectedApp} setSelectedApp={setSelectedApp} term={term} setTerm={setTerm} />
+            <AppContent selectedApp={selectedApp} setSelectedApp={setSelectedApp} term={term} setTerm={setTerm} youtubeData={youtubeData} />
+        </Router>
       </div>
     </>
   );

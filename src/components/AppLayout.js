@@ -1,13 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const AppLayout = ({youtubeData}) => {
+const AppLayout = ({ youtubeData, ...props }) => {
     const appData = () => {
-        return youtubeData.items.map((item)=>{
-            return(
-                <div className="app-data-container">
-                    <img  src={item.snippet.thumbnails.medium.url} />
-                    <div>{item.snippet.title}</div>
-                </div>
+        console.log(props);
+        return youtubeData.items.map((item) => {
+            console.log(props.selectedApp.Type);
+            return (
+                <Link to={`/${props.selectedApp.Type}/${item.id.videoId}`}>
+                    <div className="app-data-container" onClick={()=>{}}>
+                        <img src={item.snippet.thumbnails.medium.url} />
+                        <div>{item.snippet.title}</div>
+                    </div>
+                </Link>
             )
         })
     }
