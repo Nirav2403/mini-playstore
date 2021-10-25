@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
     const [currentIndex, setCurrentIndex] = useState(null);
+    const [currentInput, setCurrentInput] = useState("")
     
     const List = ["Videos","Movies","Songs","Games","News","Blogs"]
 
@@ -10,6 +11,11 @@ const Navigation = (props) => {
        props.setSelectedApp({...props.selectedApp,Type:item})
        props.setTerm(item)
        setCurrentIndex(index)
+    }
+
+    const handleChange = (e) => {
+        setCurrentInput(e.target.value);
+        props.setTerm(e.target.value)
     }
 
     const listMenu = () => {
@@ -26,7 +32,7 @@ const Navigation = (props) => {
             <div className="nav-container">
                 <div className="search-section">
                     <button type="submit"><i class="fa fa-search"></i></button>
-                    <input type="text" name="search" value={props.term} onChange={(e)=>props.setTerm(e.target.value)} placeholder="search"/>
+                    <input type="text" name="search" value={currentInput} onChange={(e)=>handleChange(e.target.value)} placeholder="search"/>
                 </div>
                 <nav className="nav-li-container">
                     {listMenu()}

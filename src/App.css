@@ -220,7 +220,7 @@
 .app-section{
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(5,auto);
+  grid-template-columns: repeat(5,1fr);
   overflow-y: scroll;
   grid-gap: 1.5rem;
   place-items: center;
@@ -250,17 +250,67 @@
   display: grid;
   grid-template-columns: 5fr 2fr;
   grid-gap:2rem;
-  border: 2px solid red;
+  overflow: hidden;
+  /* border: 2px solid red; */
 }
 
 .video-container{
   height: 100%;
   width: 100%;
-  border: 2px solid rebeccapurple;
+  /* border: 2px solid rebeccapurple; */
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 5fr 2fr;
+  grid-gap: 1rem;
+}
+.video-container iframe{
+  height: 100%;
+  width: 100%;
+  
+}
+
+.video-description{
+  /* padding: 0 1rem; */
+}
+
+.video-title{
+  font-size: 20px;
+  font-weight: 800;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid grey;
+}
+
+.video-description-text{
+  font-size: 14px;
+  padding: 1rem 2rem;
 }
 
 .video-list-container{
   height: 100%;
   width: 100%;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 1.2rem;
+  overflow: scroll;
+}
+
+.video-list-menu{
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-gap: 0.5rem;
+  /* overflow: hidden; */
+}
+.video-list-menu p{
+  font-size: 10px;
+}
+
+.video-list-menu img{
+  height: 5rem;
+  width: 8rem;
+}
+
+.video-list-title{
+  font-size: 14px;
 }

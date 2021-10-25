@@ -11,7 +11,7 @@ const App = () => {
   const [youtubeData, setYoutubeData] = useState();
   const [selectedApp, setSelectedApp] = useState({
     Type: "",
-    selectedVideo: null
+    selectedVideo: {}
   })
   const [term, setTerm] = useState("");
   const ApiData = async () => {
