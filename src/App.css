@@ -62,6 +62,7 @@
 .sidebar-header{
   width: 95%;
   display: grid;
+  padding: 1.3rem;
   /* grid-template-columns: max-content auto; */
   place-items: center;
   grid-gap: 0.5rem;
