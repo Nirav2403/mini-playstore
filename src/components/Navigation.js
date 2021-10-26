@@ -11,6 +11,7 @@ const Navigation = (props) => {
        props.setSelectedApp({...props.selectedApp,Type:item})
        props.setTerm(item)
        setCurrentIndex(index)
+       setCurrentInput("")
     }
 
     const handleChange = (e) => {
@@ -32,7 +33,7 @@ const Navigation = (props) => {
             <div className="nav-container">
                 <div className="search-section">
                     <button type="submit"><i class="fa fa-search"></i></button>
-                    <input type="text" name="search" value={currentInput} onChange={(e)=>handleChange(e.target.value)} placeholder="search"/>
+                    <input type="text" name="search" value={currentInput} onChange={(e)=>handleChange(e)} placeholder="search"/>
                 </div>
                 <nav className="nav-li-container">
                     {listMenu()}

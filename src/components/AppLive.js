@@ -20,7 +20,8 @@ const AppLive = (props) => {
     }
 
     const handleVideo = (item) => {
-        props.selectedApp.selectedVideo = item
+        props.selectedApp.selectedVideo = item;
+        props.history.push(`/${props.selectedApp.Type}/${item.id.videoId}`)
     }
     return (
         <div className="display-container">
