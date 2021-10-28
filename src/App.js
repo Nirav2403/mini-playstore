@@ -30,7 +30,7 @@ const App = () => {
     console.log(response);
   }
   useEffect(() => {
-    // ApiData();
+    ApiData();
   }, [term])
   return (
     <>
